@@ -10,9 +10,17 @@ const FullScreenNav = () => {
 
     const [navOpen, setNavOpen] = useContext(NavbarContext)
 
-
-
-
+    useEffect(() => {
+        if (navOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+        
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
+    }, [navOpen])
 
     function gsapAnimation() {
         const tl = gsap.timeline()
@@ -73,7 +81,7 @@ const FullScreenNav = () => {
     }, [navOpen])
 
     return (
-        <div ref={fullScreenRef} id='fullscreennav' className='fullscreennav hidden text-white overflow-hidden h-screen w-full z-50 absolute'>
+        <div ref={fullScreenRef} id='fullscreennav' className='fullscreennav hidden text-white overflow-hidden h-screen w-full z-50 fixed top-0 left-0'>
             <div className='h-screen w-full fixed'>
                 <div className='h-full w-full flex'>
                     <div className='stairing h-full w-1/5 bg-black'></div>
