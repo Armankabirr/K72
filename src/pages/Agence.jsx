@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef } from 'react'
+import ProjectsFooter from '../components/projects/ProjectsFooter'
 
 const Agence = () => {
 
@@ -74,6 +75,7 @@ const Agence = () => {
       <div id='page2' className=" h-screen">
 
       </div>
+      <ProjectsFooter />
     </div>
   )
 }
